@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRY</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Project</title>
+    <script src="Try.js"></script>
+</head>
+<body>
+
+<h1>Binary</h1>
+<br><br><br>
+
+<form name="toBinary">
+    <h3>Convert to Binary</h3>
+    Type a number to convert to binary:
+    <input name="input">
+    <button type="button" onclick="document.toBinary.result.value=tenToSmall(Number(document.toBinary.input.value),2)">To Binary</button>
+    <br><br>
+    Result: <input name="result" readonly="true" style="border-style: none">
+</form>
+<br><br>
+<form name="toBase">
+    <h3>Convert to Base 10</h3>
+    Type a binary number to convert to base 10:
+    <input name="input">
+    <button type="button"
+            onclick="document.toBase.result.value=smallToTen(Number(document.toBase.input.value),2)">
+        To Base 10</button>
+    <br><br>
+    Result: <input name="result" readonly="true" style="border-style: none">
+</form>
+
+<br><br>
+<form name="toChosenBase">
+    <h3>Convert to any Base</h3>
+    Type a number in any base:
+    <input name="num1">
+    <br><br>
+    Type the base of the entered number:
+    <input name="baseNum">
+    <br><br>
+    Type the base to convert into:
+    <input name="base1">
+    <button type="button" onclick="document.toChosenBase.result.value=xanyBase(Number(document.toChosenBase.num1.value),Number(document.toChosenBase.baseNum.value),Number(document.toChosenBase.base1.value))">To
+        any Base</button>
+    <br><br>
+    Result: <input name="result" readonly="true" style="border-style: none">
+</form>
+</body>
+</html>
+</body>
+</html>

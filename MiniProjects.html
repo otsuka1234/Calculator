@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Projects</title>
+    <script src="myScript.js"></script>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <style>
+
+        body {
+            font-size: 28px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: dimgrey;
+        }
+
+        .active {
+            background-color: mediumpurple;
+        }
+    </style>
+<img>
+
+<div class="header">
+</div>
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Academics.html">Academics</a></li>
+    <li><a href="Pets.html">Interests</a></li>
+    <li><a class="active" href="MiniProjects.html">Mini Projects</a></li>
+</ul>
+<form name="project1">
+    <h4>Mini Project #1: Temperature Bug</h4>
+    <br><br>
+    Type a quantity:
+    <input name="num1" type="text" placeholder="Degrees">
+    <br><br>
+    <button type="button" onclick="document.project1.result1.value=TemperatureBug()">Calculate in Fahrenheit!</button>
+    or
+    <button type="button" onclick="document.project1.result2.value=TemperatureBugCelsius()">Calculate in Celsius!</button>
+    <br> <br>
+    Results:
+    <input name="result1" type="text" readonly="true" style="border-style:none "width="50000">
+    <br><br>
+    <input name="result2" type="text" readonly="true" style="border-style:none "
+    width="50000">
+    <img src="img/loading.gif" height=200 width="500" id="temppic"/> <!-- HELP FROM ABRARRRRR!!-->
+</form>
+
+<form name="DropDown">
+    <h4> Mini Project #2: Calorie Counter</h4>
+    <select id="myList">
+        <option> Walking </option>
+        <option>Running</option>
+        <option>Sleeping</option>
+        <option>Swimming</option>
+        <option>Biking</option>
+        <option>Dancing</option>
+        <option>Hiking</option>
+    </select>
+
+    Insert amount of MINUTES spent doing the activity
+    <input name="num1" type="text" placeholder="MINUTES">
+    <button type="button" onclick="document.DropDown.result.value=dropDown()">Calculate!</button>
+    Results: <input name="result" type="text" readonly="true" style="border-style:none "width="5000">
+</form>
+<form name="project3">    <h4> Mini Project #3: Assign Grade</h4>
+    <br><br>
+    Type a quantity:
+    <input name="num1" type="text" placeholder="NUMBER">
+    <br><br>
+    <button type="button" onclick="document.project3.result.value=assignGrade()">ASSIGN GRADE</button>
+    <br><br>
+
+    Results: <input name="result" type="text" readonly="true" style="border-style:none "width="5000">
+    <br><br>
+</form>
+
+    <br><br>
+<style> #grad1
+    {
+       height: 55px;
+       background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Standard syntax (must be last) */
+    }
+
+    </style>
+    <div id="grad1" style="text-align:center;margin:auto;color:#ffffff;font-size:40px;font-weight:bold">
+        New
+    </div>
+
+<form name="toBinary">
+    Type a number in any base:
+    <input type="text" name="num1">
+    Type the base of the entered number:
+    <input type="text" name="num2">
+    <button type="button" onclick="document.toBinary.results.value=tenToSmall()">Base Ten to base ___</button>
+    Results:<input type="text" name="results"style="border-style: none" size="100px" >
+</form>
+<form name="toBase10">
+    Type a number in any base:
+    <input type="text" name="num1">
+    Type the base of the entered number:
+    <input type="text" name="num2">
+    <button type="button" onclick="document.toBase10.results.value=smallToTen()">ToTen</button>
+    Results:<input type="text" name="results"style="border-style: none" size="100px" >
+</form>
+<br><br>
+    <form name="toAnyBase">
+        <h3>Convert to any Base</h3>
+        Type a number in any base:
+        <input type=text name="num1">
+        <br><br>
+        Type the base of the entered number:
+        <input type=text name="baseNum">
+        <br><br>
+        Type the base to convert into:
+        <input type=text name="base1">
+        <button type="button" onclick="document.toAnyBase.result.value=xAnyBase(Number(document.toAnyBase.num1.value),Number(document.toAnyBase.baseNum.value),Number(document.toAnyBase.base1.value))">To any Base</button>
+        <br><br>
+        Result: <input name="result" readonly="true" style="border-style: none" size="100px">
+<br><br><br>
+</form>
+
+
+
+    </body>
+</html>
