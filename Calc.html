@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="myScript.js"></script>
+<link rel="stylesheet" href="Home.css">
+    <title>JS Calculator</title>
+</head>
+
+<body>
+<style>
+    body {
+        font-size: 28px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: dimgrey;
+    }
+
+    .active {
+        background-color: mediumpurple;
+    }
+
+</style>
+
+
+
+<div class="header">
+</div>
+
+<ul>
+    <li><a href="Calc.html">Home</a></li>
+    <li><a href="Academics.html">Academics</a></li>
+    <li><a href="Pets.html">Interests</a></li>
+    <li><a href="MiniProjects.html">Mini Projects</a></li>
+    <li><a class="active"href="Calc.html">Calculator</a></li>
+</ul>
+<form name="calc">
+    <input name="calcWindow" align="center" type="text" readonly="true" class="button2" >
+    <br><br>
+    <button class="button1" type="button" value="^" onclick="document.calc.calcWindow.value+='^'">^</button>
+    <button class="button1"  type="button"  value="2√" onclick="document.calc.calcWindow.value=squareroot(document.calc.calcWindow.value)">2√</button>
+    <button class="button4"  type="button" value="Clear" onclick="document.calc.calcWindow.value=Clear(document.calc.calcWindow.value)">A/C</button>
+    <button class="button1" type="button"  value="⌫" onclick="document.calc.calcWindow.value=backSpace(document.calc.calcWindow.value)">⌫</button>
+    <br><br>
+    <button class="button1"  type="button"  value="7" onclick="document.calc.calcWindow.value+=7">7</button>
+
+    <button class="button1"  type="button"  value="8" onclick="document.calc.calcWindow.value+=8">8</button>
+
+    <button class="button1"  type="button"  value="9" onclick="document.calc.calcWindow.value+=9">9</button>
+
+    <button class="button1"  type="button"  value="/" onclick="document.calc.calcWindow.value+='/'">/</button>
+
+
+    <br><br>
+    <button class="button1"  type="button" value="4" onclick="document.calc.calcWindow.value+=4">4</button>
+
+    <button class="button1"  type="button" value="5" onclick="document.calc.calcWindow.value+=5">5</button>
+
+    <button class="button1"  type="button" value="6" onclick="document.calc.calcWindow.value+=6">6</button>
+
+    <button class="button1"  type="button"  value="*" onclick="document.calc.calcWindow.value+='*'">*</button>
+    <br><br>
+    <button class="button1"  type="button" value="1" onclick="document.calc.calcWindow.value+=1">1</button>
+
+    <button  class="button1"  type="button" value="2" onclick="document.calc.calcWindow.value+=2">2</button>
+
+    <button class="button1"  type="button" value="3" onclick="document.calc.calcWindow.value+=3">3</button>
+
+    <button  class="button1"  type="button" value="-" onclick="document.calc.calcWindow.value+='-'">-</button>
+    <br><br>
+    <button class="button1"  type="button" value="0" onclick="document.calc.calcWindow.value+=0">0</button>
+
+    <button class="button1"  type="button" value="+" onclick="document.calc.calcWindow.value+='+'">+</button>
+    <button class="button3"  type="button"  value="=" onclick="equals()">=</button> <!--help from motiQ Research on Youtube -->
+
+
+
+    <br><br>
+
+
+    <br><br>
+</form>
+</body>
+</html>

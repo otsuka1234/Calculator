@@ -1,61 +1,109 @@
+/*
+Gameplan
+
+HTML:
+(*) Calculator Window for operations to be shown along with results
+() Number buttons for the calculator
+() Operator Buttons (+,->* etc)
+()' ='Button
+() Resets or clear button
+() Optional: Backspace Button
+
+javaScript:
+() Function tha captures what typed in  the calcWindow
+() Separate functions that add numbers,subtract numbers, etc     LLLOOOOOPPPPPSSS
+ */
 
 
-
-
-
-
-
-function tenToSmall (num,base)//convert a base- 10 number to a smaller base
+function calculate (expression) //ex. expression is 2 +5 ot 9*6 or 10/5
 {
-// this function is expecting a number (num) in base 10
-    //it will convert the number (num) to value of 'base'
-    num= Number (document.toBinary.num1.value);//number to convert
-    base=Number (document.toBinary.num2.value);//destination base
-    smallNum=""; //store remainders here
+    var firstNum = Number(expression.substr(0, 1));//first is where do you start
+// second is how many characters is captured
+    var operator = expression.substr(1, 1);
+    var secondNum = Number(expression.substr(2, 1));
 
-    while (num > 0)//continue looping while num isn't zero
+    if (operator.substr(2,1)=='+')
     {
-        smallNum = num%base + smallNum;// 3 %5 =2///% returns remainders
-        //setup num for the next iteration of the loop
-        num= Math.floor (num/base);//Floor rounds remainder down
-        alert (smallNum);
-        alert(num);
+        firstNum
     }
-    return smallNum;
-}
-function smallToTen
- (num,base)//convert a small- base number to base-10\
-{
-    num= Number (document.toBase10.num1.value);
-    base=Number (document.toBase10.num2.value);
 
-    tenNum = 0; //stores number to be outputed
-    numLength = num.toString().length; //convert num to a STRING, then counts the number of characters in the string
-    // in this case, length of '1101' is 4
-    while (numLength > 0)
+
+
+    if (operator === '+')
     {
-        var denominator = Math.pow(10,(numLength - 1)); //gets denominator of fraction
-        // for 1101, denominators will be 1000,100,10,1
-
-        var currentDigit = Math.floor(num / denominator); //captures a 1 or 0 to multiply by 2^ numLength
-        //above means 10101/100 =1... 101/100 =1.... 01/10=0... 1/1=1...
-        tenNum = tenNum + currentDigit * Math.pow(base,numLength - 1);
-        //currentDigit*2^3 ... currentDigit *2^2....currentDigit*2^1... etc
-        num = num % denominator; //reduce num for the next iteration
-        //1101 -> 101 -> 01-> 1
-        numLength--; //decrease the numLength value by 1... otherwise will loop infintely
+        return addNums(firstNum, secondNum);
     }
-   return tenNum;
+    else if (operator === '-')
+    {
+        return subtractNums(firstNum, secondNum);
+    }
+    else if (operator === '/')
+    {
+        return divideNums(firstNum, secondNum);
+    }
+    else if (operator === '*')
+    {
+        return multiplyNums(firstNum, secondNum);
+    }
+    else if (operator === '^')
+    {
+        return powNums(firstNum, secondNum);
+    }
 
+        }
 
-}
-
-function xtoY (num1,base,num2)
+function addNums(p1,p2)//addNums expects 2 parameters...p1 and p2
 {
-    alert (num1);
-    alert (num2);
-    alert (num3);
-       var temp1=smallToTen(num1,num2);
-       var temp2=tenToSmall(temp1,num3);
-   return temp2;
+
+    return p1+p2;
 }
+function subtractNums(p1,p2)
+{
+    return p1-p2;
+}
+function divideNums(p1,p2)
+{
+    return p1/p2;
+}
+function multiplyNums(p1,p2)
+{
+    return p1*p2;
+}
+function powNums(p1,p2)
+{
+    var Power = Math.pow(p1,p2);
+    return Power;
+}
+function squareroot (p1)
+{
+    var Square= Math.sqrt(p1);
+    return Square;
+}
+
+function Clear (expression)
+{
+   expression="";
+    return expression;
+}
+function backSpace ()
+{
+   return document.calc.calcWindow.value.slice (0,-1);
+
+}
+
+
+
+function equals ()
+{
+    var exp=document.calc.calcWindow.value;
+    if (exp)
+    {
+        document.calc.calcWindow.value=eval(exp)
+    }
+
+
+}
+
+
+
+
