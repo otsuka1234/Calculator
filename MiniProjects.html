@@ -147,6 +147,81 @@
         Result: <input name="result" readonly="true" style="border-style: none" size="100px">
 <br><br><br>
 </form>
+<script type="text/javascript">
+
+        var Words = [];
+
+        function MadLibs()
+        {
+            var adj1=document.ML.input1.value;
+            var adj2=document.ML.input2.value;
+            var adj3=document.ML.input3.value;
+            var adj4=document.ML.input4.value;
+            var adj5=document.ML.input5.value;
+            var musin=document.ML.input6.value;
+            var noun1=document.ML.input7.value;
+            var noun2=document.ML.input8.value;
+            var noun3=document.ML.input9.value;
+            var noun4=document.ML.input10.value;
+            var noun5=document.ML.input11.value;
+            var Num=document.ML.input12.value;
+            var pluN1=document.ML.input13.value;
+            var pluN2=document.ML.input14.value;
+            var PYK=document.ML.input15.value;
+
+            Words.push(PYK);
+            Words.push(pluN1);
+            Words.push(adj1);
+            Words.push(noun1);
+            Words.push(adj2);
+            Words.push(pluN2);
+            Words.push(adj3);
+            Words.push(noun2);
+            Words.push(adj4);
+            Words.push(noun3);
+            Words.push(musin);
+            Words.push(Num);
+            Words.push(adj5);
+            Words.push(noun4);
+            Words.push(noun5);
+
+
+
+            return "This evening, the famous orchestra conductor, " +Words[0]+ " will present a program of classical "
+                +Words[1]+" at the " +Words[2]+" music center. He/She will conduct the "+Words[3]+" Symphony Orchestra, which is noted for its excellent string and "
+                +Words[4]+ " wind sections, considered by many "+Words[5]+" to be the world's most "+Words[6]+" ensemble. The program will begin with" +
+                " Debussy's \"Clair de "+Words[7]+"\" followed by Mendelssohn's "+Words[8]+" Song,\" and Strauss' \"Tale of the Vienna "
+                +Words[9]+"\" Then we will hear Rachmaninoff's\" " +Words[10]+" Concerto Number "+Words[11]+",\"  but only the "+Words[12]+
+                " Movement After intermission, the second half of the program will be devoted to a playing in its entirety of Beethoven's \"Fifth "+Words[13]+"\". Tickets\n" +
+                "are on sale now at the " +Words[14] +" office.";
+        }
+        </script>
+</head>
+<body>
+<form name="ML">
+    <h1>MAD LIBS</h1>
+    <h2>Story From RedKids.Net</h2>
+    <br><br>
+    Adjective:<input type="text" name="input1"> <br><br>
+    Adjective:<input type="text" name="input2"><br><br>
+    Adjective:<input type="text" name="input3"><br><br>
+    Adjective:<input type="text" name="input4"><br><br>
+    Adjective:<input type="text" name="input5"><br><br>
+    Musical Instrument:<input type="text" name="input6"><br><br>
+    Noun:<input type="text" name="input7"><br><br>
+    Noun:<input type="text" name="input8"><br><br>
+    Noun:<input type="text" name="input9"><br><br>
+    Noun:<input type="text" name="input10"><br><br>
+    Noun:<input type="text" name="input11"><br><br>
+    Number:<input type="text" name="input12"><br><br>
+    Plural Noun:<input type="text" name="input13"><br><br>
+    Plural Noun:<input type="text" name="input14"><br><br>
+    Person You Know:<input type="text" name="input15"><br><br>
+    <button type="button" onclick="document.getElementById('story').innerHTML=MadLibs()">Read Your Story</button>
+    <p class="Paragraph" id="story"></p>
+
+
+</form>
 
 
 
