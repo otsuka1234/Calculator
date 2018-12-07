@@ -123,8 +123,9 @@ else {
         feedback.push("Question #6 is INCORRECT!There are 29 AP courses in HEHS");
     }
 
-    alert(score);
-    alert(feedback);
+   if (score===6)
+   {
+       return "score= " + score + " YOU GOT ALL OF THEM RIGHT";
     return "score= " + score + " feedback= "+feedback;
 
 }
