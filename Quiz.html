@@ -104,13 +104,13 @@ else {
         feedback.push("Question #1 is INCORRECT the answer is \"The Home of the Wounded Hawks\"");
     }
     //Question #5
-    if (document.Quiz.B2A.checked == true && document.Quiz.B2B.checked == false && document.Quiz.B2C.checked == true && document.Quiz.B2D.checked == true && document.Quiz.B2E.checked == false)
+    if (document.Quiz.B2A.checked == true && document.Quiz.B2B.checked == false && document.Quiz.B2C.checked == true && document.Quiz.B2D.checked == false && document.Quiz.B2E.checked == false)
     {
         score++;
-        feedback.push("Question #2 is CORRECT. YOU GOT THEM ALL!");
+        feedback.push("Question #5 is CORRECT. YOU GOT THEM ALL!");
     }
     else {
-        feedback.push("Question #2 is INCORRECT! The Answers were 15 Department, Harpers Promise and the HEHS motto");
+        feedback.push("Question #5 is INCORRECT! The Answers were 15 Department and the HEHS motto");
     }
     //Question #6
     var Q6Ans = document.Quiz.b1.value.toLowerCase();
@@ -179,6 +179,7 @@ else {
     <button type="button" onclick="document.getElementById('feedback').innerHTML=CheckAnswers()">CHECK YOUR ANSWERS HERE</button>
 
     <h4 class="Score" id="feedback"></h4>
+    <br><br>
 </form>
 </body>
 </html>
