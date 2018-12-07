@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body>
+<body>
+<style>
+    body {
+        font-size: 28px;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+    }
+    li {
+        float: left;
+    }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: dimgrey;
+    }
+    .active {
+        background-color: mediumpurple;
+    }
+</style>
+
+
+
+<div class="header">
+</div>
+
+<ul>
+    <li><a href="Calc.html">Home</a></li>
+    <li><a href="Academics.html">Academics</a></li>
+    <li><a href="Pets.html">Interests</a></li>
+    <li><a href="MiniProjects.html">Mini Projects</a></li>
+    <li><a href="Calc.html">Calculator</a></li>
+    <li> <a href="MadLibs.html">MadLibs</a></li>
+    <li> <a class="active" href="Quiz.html">Quiz</a></li>
+</ul>
+<script type="text/javascript">
+
+function CheckAnswers()
+{
+    var score=0;
+    //store feedback for each question
+    var feedback=[];
+
+    //Question #1
+if (document.Quiz.a1.value==="Cheesecake")
+   {
+       score++;
+    feedback.push("Question #1 is CORRECT the answer is the Cheesecake fundraiser");
+    }
+else {
+   feedback.push("Question #1 is INCORRECT the answer is The Cheesecake fundraiser was only for band students. This fundraiser was used to provide the whole music department!");
+    }
+    //Question #2
+    if (document.Quiz.a2A.checked == false && document.Quiz.a2B.checked == true && document.Quiz.a2C.checked == false && document.Quiz.a2D.checked == true && document.Quiz.a2E.checked == true)
+    {
+        score++;
+        feedback.push("Question #2 is CORRECT. YOU GOT THEM ALL!");
+    }
+else {
+    feedback.push("Question #2 is INCORRECT! The Answers were Waterpolo, Lacrosse, and baseball! You might have missed one or maybe a few");
+     }
+    //Question #3
+
+    var Q3Ans = document.Quiz.a4.value.toLowerCase();
+    if (Q3Ans==="1975")
+    {
+        score++;
+        feedback.push("Question #3 is CORRECT!");
+    }
+    else {
+        feedback.push("Question #3 is INCORRECT! HEHS was established first as a Freshman and Sophomore High School in 1970 and then turned into a 4 year High School in 1975.");
+    }
+   //Question #4
+    if (document.Quiz.B2.value==="WoundedHawk")
+    {
+        score++;
+        feedback.push("Question #1 is CORRECT the answer is \"The Home of the Wounded Hawks\"");
+    }
+    else if (document.Quiz.B2.value==="SameAthletic")
+    {
+        score= score+10000;
+        feedback.push("Participation Points +10000");
+    }
+    else {
+        feedback.push("Question #1 is INCORRECT the answer is \"The Home of the Wounded Hawks\"");
+    }
+    //Question #5
+    if (document.Quiz.B2A.checked == true && document.Quiz.B2B.checked == false && document.Quiz.B2C.checked == true && document.Quiz.B2D.checked == true && document.Quiz.B2E.checked == false)
+    {
+        score++;
+        feedback.push("Question #2 is CORRECT. YOU GOT THEM ALL!");
+    }
+    else {
+        feedback.push("Question #2 is INCORRECT! The Answers were 15 Department, Harpers Promise and the HEHS motto");
+    }
+    //Question #6
+    var Q6Ans = document.Quiz.b1.value.toLowerCase();
+    if (Q6Ans==="29")
+    {
+        score++;
+        feedback.push("Question #6 is CORRECT!");
+    }
+    else {
+        feedback.push("Question #6 is INCORRECT!There are 29 AP courses in HEHS");
+    }
+
+    alert(score);
+    alert(feedback);
+    return "score= " + score + " feedback= "+feedback;
+
+}
+
+    </script>
+<form name="Quiz">
+    <h1>Hoffman Estates Quiz!</h1>
+    <br><br>
+    <h3>Question 1: Which of the following is  NOT true?</h3> <br> <!--Images w/ multiple choice ONLY ONE ANSWER -->
+    <img src="img/seachBar.jpg" height="236" width="326">
+    <input type="radio" name="a1" value="UrbanDictionary">Hoffman Estates High School has a urban dictionary entry<br>
+    <img src="img/basketball.jpeg" height="236" width="326">
+    <input type="radio" name="a1" value="Basketball">Hoffman Estates High School Varsity Girls Basketball lost to Conant(Nov 30th, 2018)<br>
+    <img src="img/hawks.jpg" height="236" width="326">
+    <input type="radio" name="a1" value="HerculesTheHawk">Hoffman Estates' Mascot (hawk) is named Hercules<br>
+    <img src="img/Cheesecake.jpg" height="236" width="326">
+    <input type="radio" name="a1" value="Cheesecake">The Cheesecake fundraiser was only for band students <br>
+    <br><br>
+    Question 2: Which of the following SPRING sports? Select All that apply  <br><!--#1 Select All that apply-->
+    <input type="checkbox" name="a2A" value="Girls Tennis">Girls Tennis <br>
+    <input type="checkbox" name="a2B" value="Waterpolo">Waterpolo (both boys and girls) <br>
+    <input type="checkbox" name="a2C" value="Math">Math Team<br>
+    <input type="checkbox" name="a2D" value="Lacrosse">Girls Lacrosse<br>
+    <input type="checkbox" name="a2E" value="Baseball">Baseball<br>
+<br><br>
+    Question 3: What was the first year that Hoffman Estates had Seniors and Juniors? <!--#1 Short Answer -->
+    <input type="text" name="a4">
+
+    <h3>Question 4: Which of the following is the nickname for the athletic training center (according to the HEHS website)?</h3> <br> <!--Images w/ multiple choice ONLY ONE ANSWER -->
+    <img src="img/AthleticTraining.png" height="236" width="326">
+
+    <input type="radio" name="B2" value="Rehab">"Hawks Rehab Center"<br>
+
+    <input type="radio" name="B2" value="TheNest">"The Nest of the Recovering Hawks"<br>
+
+    <input type="radio" name="B2" value="WoundedHawk">"The Home of the Wounded Hawks"<br>
+
+    <input type="radio" name="B2" value="sameAthletic">...its just the athletic trainers<br>
+    <br><br>
+    Question 5: Select All that are true.  <br><!--#2 Select All that apply-->
+
+    <input type="checkbox" name="B2A" value="department">there are 15 Academics Department <br>
+    <input type="checkbox" name="B2E" value="lang">There are only 3 languages offered in HEHS (4 years) <br>
+    <input type="checkbox" name="B2B" value="HarperPr"> Freshman ( in order to qualify for Harper's Promise) need 5 service opportunities ( in a year) <br>
+    <input type="checkbox" name="B2C" value="Motto"> The Motto of HEHS is"Promoting excellence through knowledge, confidence, and achievement"<br>
+    <input type="checkbox" name="B2D" value="EYAS">EYAS stands for Education-Young-Athletic-Studies<br>
+
+    <br><br>
+
+    Question 6: How many AP classes are in HEHS? <!--#2 Short Answer -->
+    <input type="text" name="b1">
+    <button type="button" onclick="document.getElementById('feedback').innerHTML=CheckAnswers()">CHECK YOUR ANSWERS HERE</button>
+
+    <h4 class="Score" id="feedback"></h4>
+</form>
+</body>
+</html>
