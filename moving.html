@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving</title>
+</head>
+<script>
+
+    var a;
+    var oneX=100;
+    var oneY=300;
+    var oneW=250;
+    var oneH=125;
+
+    var twoX=350;
+    var twoY=350;
+    var twoW=50;
+    var twoH=75;
+
+
+    var wheelOneX=150;
+    var wheelOneY=420;
+    var wheelOneR=40;
+
+    var wheelTwoX=350;
+    var wheelTwoY=420;
+    var wheelTwoR=40;
+
+    var wheelThreeX=150;
+    var wheelThreeY=420;
+    var wheelThreeR=15;
+
+
+
+    var wheelFourX=350;
+    var wheelFourY=420;
+    var wheelFourR=15;
+
+    var buildOneX=0;
+    var buildOneY=100;
+    var buildOneW=100;
+    var buildOneH=300;
+
+    var buildTwoX=100;
+    var buildTwoY=150;
+    var buildTwoW=100;
+    var buildTwoH=250;
+
+    var buildThreeX=200;
+    var buildThreeY=50;
+    var buildThreeW=100;
+    var buildThreeH=350;
+
+    var buildFourX=300;
+    var buildFourY=100;
+    var buildFourW=100;
+    var buildFourH=300;
+
+    var buildFiveX=400;
+    var buildFiveY=50;
+    var buildFiveW=100;
+    var buildFiveH=350;
+
+    var buildSixX=500;
+    var buildSixY=150;
+    var buildSixW=100;
+    var buildSixH=250;
+
+    var SkyzX=0;
+    var SkyzY=0;
+    var SkyzW=500;
+    var SkyzH=500;
+
+    var SkyOneX=500;
+    var SkyOneY=0;
+    var SkyOneW=500;
+    var SkyOneH=500;
+
+    var SkyTwoX=1000;
+    var SkyTwoY=0;
+    var SkyTwoW=500;
+    var SkyTwoH=500;
+
+    var SkyThreeX=1500;
+    var SkyThreeY=0;
+    var SkyThreeW=500;
+    var SkyThreeH=500;
+
+    var SkyFourX=2000;
+    var SkyFourY=0;
+    var SkyFourW=500;
+    var SkyFourH=500;
+
+    var SkyFiveX=2500;
+    var SkyFiveY=0;
+    var SkyFiveW=500;
+    var SkyFiveH=500;
+
+
+
+    function drawBackground()//things that WONT Move in the animation
+    {
+        var ctx= document.getElementById("myCanvas").getContext("2d");
+        ctx.fillStyle="#00ffff";
+        ctx.fillRect(0,0,window.innerWidth,window.innerHeight);// the dimension of this rectangle
+        //will mirror the dimensions of the Canvas, regardless of the size of the Canvas
+        ctx.beginPath();
+        ctx.fillStyle="#000000";
+        ctx.fillRect(0,400,500,100);
+    }
+    //var i= 0;
+  function changeBackground()
+    {
+
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+
+        if (0 < i < 1) {
+            ctx.fillStyle = "#00ffff";
+            ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);// the dimension of this rectangle
+            //will mirror the dimensions of the Canvas, regardless of the size of the Canvas
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(0, 400, 500, 100);
+            i++;
+
+        }
+
+
+
+
+
+
+    else
+        if (2 < i < 3) {
+            ctx.fillStyle = "#001959";
+            ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);// the dimension of this rectangle
+            //will mirror the dimensions of the Canvas, regardless of the size of the Canvas
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(0, 400, 500, 100);
+            i++;
+
+        }
+        else if (i > 4) {
+            i = 0;
+        }
+
+
+    }
+    function Background2()
+    {
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+
+        ctx.fillStyle="#00ffff";
+        ctx.fillRect(SkyzX,SkyzY,SkyzW,SkyzH);
+
+        // Create gradient
+        var grd = ctx.createLinearGradient(0, 0, 500, 0);
+        grd.addColorStop(0, "#00FFFF");
+        grd.addColorStop(1, "#005cff");
+        // Fill with gradient
+        ctx.beginPath();
+        ctx.fillStyle = grd;
+        ctx.fillRect(SkyOneX,SkyOneY,SkyOneW,SkyOneH);
+
+        grd.addColorStop(0, "#005cff");
+        grd.addColorStop(1, "#1d0062");
+        // Fill with gradient
+        ctx.beginPath();
+        ctx.fillStyle = grd;
+        ctx.fillRect(SkyTwoX,SkyTwoY,SkyTwoW,SkyTwoH);
+
+        ctx.fillStyle="#1d0062";
+        ctx.fillRect(SkyThreeX,SkyThreeY,SkyThreeW,SkyThreeH);
+
+        grd.addColorStop(0, "#1d0062");
+        grd.addColorStop(1, "#005cff");
+        // Fill with gradient
+        ctx.beginPath();
+        ctx.fillStyle = grd;
+        ctx.fillRect(SkyFourX,SkyFourY,SkyFourW,SkyFourH);
+
+        grd.addColorStop(0, "#005cff");
+        grd.addColorStop(1, "#00ffff");
+        // Fill with gradient
+        ctx.beginPath();
+        ctx.fillStyle = grd;
+        ctx.fillRect(SkyFiveX,SkyFiveY,SkyFiveW,SkyFiveH);
+
+        ctx.beginPath();
+        ctx.fillStyle="#000000";
+        ctx.fillRect(0,400,500,100);
+    }
+
+    var moveAmountSky= -10;
+    function moveSky ()
+    {
+        var ctx= document.getElementById("myCanvas").getContext("2d");
+        var grd = ctx.createLinearGradient(0, 0, 500, 0);
+
+
+        SkyzX=SkyzX+moveAmountSky;
+        ctx.fillStyle="#00ffff";
+        ctx.fillRect(SkyzX,SkyzY,SkyzW,SkyzH);
+
+        SkyOneX= SkyOneX+moveAmountSky;
+        grd.addColorStop(0, "#00FFFF");
+        grd.addColorStop(1, "#005cff");
+        ctx.fillRect(buildOneX,buildOneY,buildOneW,buildOneH);
+
+        SkyTwoX= SkyTwoX+moveAmountSky;
+        grd.addColorStop(0, "#005cff");
+        grd.addColorStop(1, "#1d0062");
+        ctx.fillRect(SkyTwoX,SkyTwoY,SkyTwoW,SkyTwoH);
+
+        SkyThreeX=SkyThreeX+moveAmountSky;
+        ctx.fillStyle="#1d0062";
+        ctx.fillRect(SkyThreeX,SkyThreeY,SkyThreeW,SkyThreeH);
+
+        SkyFourX=SkyFourX+moveAmountSky;
+        grd.addColorStop(0, "#1d0062");
+        grd.addColorStop(1, "#005cff");
+        ctx.fillRect(SkyFourX,SkyFourY,SkyFourW,SkyFourH);
+
+        SkyFiveX=SkyFiveX+moveAmountSky;
+        grd.addColorStop(0, "#005cff");
+        grd.addColorStop(1, "#00ffff");
+        ctx.fillRect(SkyFiveX,SkyFiveY,SkyFiveW,SkyFiveH);
+
+        ctx.beginPath();
+        ctx.fillStyle="#000000";
+        ctx.fillRect(0,400,500,100);
+
+
+
+
+    }
+    function checkSky()
+    {
+        if (SkyzX <-100)
+    {
+        SkyzX=2000;
+    }
+        if (SkyOneX < -500)
+        {
+            SkyOneX=2000;
+        }
+        if (SkyTwoX < -500)
+        {
+            SkyTwoX=2000;
+        }
+        if (SkyThreeX <-500)
+        {
+            SkyThreeX=2000;
+        }
+        if (SkyFourX <-500)
+        {
+            SkyFourX=2000;
+        }
+        if (SkyFiveX <-500)
+        {
+            SkyFiveX=2000;
+        }
+
+
+    }
+    function initialize ()
+    {
+        drawBackground(); // establish background elements
+        //changeBackground();
+        Background2();
+        var ctx= document.getElementById("myCanvas").getContext("2d");
+        //draw a red rectangle to animate
+        // in fact, anything you eidh to animate would be draw here
+
+        //cities
+
+        ctx.beginPath();
+        ctx.lineWidth=2;
+
+        ctx.fillStyle ="#636363";
+        ctx.fillRect(buildOneX,buildOneY,buildOneW,buildOneH);
+        ctx.strokeStyle="#000000";
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#000000";
+        ctx.fillStyle ="#636363";
+        ctx.fillRect(buildTwoX,buildTwoY,buildTwoW,buildTwoH);
+        ctx.stroke();
+
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#000000";
+        ctx.beginPath();
+        ctx.fillStyle ="#636363";
+        ctx.fillRect(buildThreeX,buildThreeY,buildThreeW,buildThreeH);
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#000000";
+        ctx.fillStyle ="#636363";
+        ctx.fillRect(buildFourX,buildFourY,buildFourW,buildFourH);
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#000000";
+        ctx.fillStyle ="#636363";
+        ctx.fillRect(buildFiveX,buildFiveY,buildFiveW,buildFiveH);
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#000000";
+        ctx.fillStyle ="#636363";
+        ctx.fillRect(buildSixX,buildSixY,buildSixW,buildSixH);
+        ctx.stroke();
+
+        //car
+        ctx.fillStyle ="#ff0000";
+        ctx.fillRect(oneX,oneY,oneW,oneH);
+
+        ctx.fillStyle ="#ff0000";
+        ctx.fillRect(twoX,twoY,twoW,twoH);
+
+
+
+        //wheel
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#1d0d3a";
+        ctx.beginPath(); //instructions for the first circle starts here
+        ctx.arc(wheelOneX,wheelOneY,wheelOneR,0,2*Math.PI);
+        ctx.fillStyle ="#1d0d3a";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#1d0d3a";
+        ctx.beginPath();
+        ctx.arc(wheelTwoX,wheelTwoY,wheelTwoR,0,2*Math.PI);
+        ctx.fillStyle ="#1d0d3a";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#ffffff";
+        ctx.beginPath(); //instructions for the first circle starts here
+        ctx.arc(wheelThreeX,wheelThreeY,wheelThreeR,0,2*Math.PI);
+        ctx.fillStyle ="#ffffff";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(wheelFourX,wheelFourY,wheelFourR,0,2*Math.PI);
+        ctx.fillStyle ="#ffffff";
+        ctx.fill();
+        ctx.stroke();
+    }
+    var moveAmountCities= -5;
+    function moveCities ()
+    {
+        var ctx= document.getElementById("myCanvas").getContext("2d");
+       buildOneX= buildOneX+moveAmountCities;
+        ctx.fillStyle = "#636363";
+        ctx.fillRect(buildOneX,buildOneY,buildOneW,buildOneH);
+
+        buildTwoX= buildTwoX+moveAmountCities;
+        ctx.fillStyle = "#636363";
+        ctx.fillRect(buildTwoX,buildTwoY,buildTwoW,buildTwoH);
+
+        buildThreeX=buildThreeX+moveAmountCities;
+        ctx.fillStyle = "#636363";
+        ctx.fillRect(buildThreeX,buildThreeY,buildThreeW,buildThreeH);
+
+        buildFourX=buildFourX+moveAmountCities;
+        ctx.fillStyle = "#636363";
+        ctx.fillRect(buildFourX,buildFourY,buildFourW,buildFourH);
+        buildFiveX=buildFiveX+moveAmountCities;
+        ctx.fillStyle = "#636363";
+        ctx.fillRect(buildFiveX,buildFiveY,buildFiveW,buildFiveH);
+        buildSixX=buildSixX+moveAmountCities;
+        ctx.fillStyle = "#636363";
+        ctx.fillRect(buildSixX,buildSixY,buildSixW,buildSixH);
+
+
+
+    }
+    function checkCities()
+    {
+        if (buildOneX < -100)
+        {
+            buildOneX=600;
+        }
+        if (buildTwoX < -100)
+        {
+            buildTwoX=600;
+        }
+        if (buildThreeX <-100)
+        {
+            buildThreeX=600;
+        }
+        if (buildFourX <-100)
+        {
+            buildFourX=600;
+        }
+        if (buildFiveX <-100)
+        {
+            buildFiveX=600;
+        }
+        if (buildSixX <-100)
+        {
+            buildSixX=600;
+        }
+
+    }
+    function moveWheelsRight ()
+    {
+        var ctx= document.getElementById("myCanvas").getContext("2d");
+        wheelOneY= wheelOneY+moveAmount; //modify cords
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#1d0d3a";
+        ctx.beginPath(); //instructions for the first circle starts here
+        ctx.arc(wheelOneX,wheelOneY,wheelOneR,0,2*Math.PI);
+        ctx.fillStyle ="#1d0d3a";
+        ctx.fill();
+        ctx.stroke();
+        wheelTwoY=wheelTwoY+moveAmount;
+        ctx.lineWidth=2;
+        ctx.beginPath();
+        ctx.strokeStyle = "#1d0d3a";
+        ctx.arc(wheelTwoX,wheelTwoY,wheelTwoR,0,2*Math.PI);
+        ctx.fillStyle ="#1d0d3a";
+        ctx.fill();
+        ctx.stroke();
+
+        wheelThreeY= wheelThreeY+moveAmount;
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#ffffff";
+        ctx.beginPath(); //instructions for the first circle starts here
+        ctx.arc(wheelThreeX,wheelThreeY,wheelThreeR,0,2*Math.PI);
+        ctx.fillStyle ="#ffffff";
+        ctx.fill();
+        ctx.stroke();
+
+        wheelFourY= wheelFourY+moveAmount;
+        ctx.lineWidth=2;
+        ctx.strokeStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(wheelFourX,wheelFourY,wheelFourR,0,2*Math.PI);
+        ctx.fillStyle ="#ffffff";
+        ctx.fill();
+        ctx.stroke();
+    }
+    function checkCar()
+    {
+        if (oneY > 375)
+        {
+            moveAmount= moveAmount*(-1);
+        }
+        if ( oneY < 275)
+        {
+            moveAmount= moveAmount*(-1);
+        }
+    }
+    function checkCar2()
+    {
+        if (twoY > 375)
+        {
+            moveAmount= moveAmount*(-1);
+        }
+        if ( twoY < 275)
+        {
+            moveAmount= moveAmount*(-1);
+        }
+    }
+    var moveAmount = -3;
+    function moveCarRight ()
+    {
+        var ctx= document.getElementById("myCanvas").getContext("2d");
+        oneY= oneY+moveAmount; //modify cords
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(oneX,oneY,oneW,oneH);
+        twoY=twoY+moveAmount;
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(twoX,twoY,twoW,twoH);
+    }
+
+    function animate() //these are the frames that get repeated (animated)
+    {
+        a = requestAnimationFrame(animate);
+        drawBackground();
+        Background2 ();
+        moveSky ();
+        moveCities ();
+        moveCarRight ();
+        checkCar();
+        checkCar2();
+        moveWheelsRight ();
+
+        checkSky();
+
+        checkCities();
+    }
+    function startAnimation ()
+    {
+        animate()
+    }
+    function stopAnimation ()
+    {
+        cancelAnimationFrame(a);
+    }
+
+
+
+
+</script>
+<body onload="initialize()">
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<button type="button" onclick="startAnimation()">thehtjhieth</button>
+<button type="button" onclick="stopAnimation()">STOPPPPP</button>
+</body>
+</html>
